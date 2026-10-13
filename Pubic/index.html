@@ -1,46 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRYPTO WITH ANONYMOUS BINANCE GIVEAWAY</title>
-<meta name="description" content="Independent crypto giveaway concept.">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRYPTO WITH ANONYMOUS BINANCE GIVEAWAY</title>
 <style>
-:root{color-scheme:dark;--yellow:#f0b90b;--bg:#0b0e11;--panel:#181a20;--muted:#848e9c}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:#eaecef;background:radial-gradient(circle at 50% 0%,#29200a 0,#0b0e11 45%,#07090b 100%);display:flex;align-items:center;justify-content:center;padding:22px}
-.card{width:100%;max-width:480px;background:rgba(24,26,32,.97);border:1px solid #34383f;border-radius:22px;padding:28px 22px;box-shadow:0 18px 60px #0008;text-align:center}
-.mark{width:68px;height:68px;margin:0 auto 18px;display:grid;place-items:center;background:var(--yellow);color:#0b0e11;font-size:38px;font-weight:900;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
-h1{color:var(--yellow);font-size:clamp(24px,6vw,34px);line-height:1.12;margin:0 0 12px}.sub{color:#d1d5db;line-height:1.5;margin:0 0 22px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0 24px}.stat{background:#0b0e11;border:1px solid #30343b;border-radius:12px;padding:12px 5px}.stat strong{display:block;color:var(--yellow);font-size:20px;margin-bottom:5px}.stat span{font-size:11px;color:var(--muted)}
-label{display:block;text-align:left;font-size:13px;margin:0 0 8px}input{width:100%;background:#0b0e11;border:1px solid #474d57;border-radius:10px;padding:15px;color:white;font-size:16px;outline:none}input:focus{border-color:var(--yellow)}
-button{width:100%;margin-top:13px;border:0;border-radius:10px;background:var(--yellow);color:#0b0e11;font-weight:800;font-size:16px;padding:15px;cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}
-#message{min-height:24px;margin:15px 0 0;font-size:14px;line-height:1.45}.notice{margin-top:14px;padding:10px;border-radius:9px;background:#262015;color:#e6d5a4;font-size:11px;line-height:1.45}.note{color:var(--muted);font-size:11px;line-height:1.5;margin:18px 0 0}
-</style>
-</head>
-<body>
-<main class="card">
-  <div class="mark" aria-label="Independent giveaway mark">◇</div>
-  <h1>CRYPTO WITH ANONYMOUS BINANCE GIVEAWAY</h1>
-  <p class="sub">Enter your Binance UID to submit a giveaway claim. 🎁</p>
-  <section class="stats">
-    <div class="stat"><strong id="reward">$0.05</strong><span>PER SLOT</span></div>
-    <div class="stat"><strong id="remaining">8</strong><span>SLOTS LEFT</span></div>
-    <div class="stat"><strong id="claimed">0/8</strong><span>CLAIMED</span></div>
-  </section>
-  <form id="claimForm">
-    <label for="uid">Binance UID</label>
-    <input id="uid" name="uid" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="Enter your Binance UID" required>
-    <button id="submitBtn" type="submit">CLAIM REWARD 🎉</button>
-  </form>
-  <p id="message" role="status" aria-live="polite"></p>
-  <div class="notice">Independent giveaway concept — not affiliated with or endorsed by Binance. Never enter your password, 2FA code, seed phrase, or private key.</div>
-  <p class="note">This demo checks UID format only. It cannot confirm the UID exists or retrieve the account username without an authorized verification method.</p>
-</main>
-<script>
-const form=document.getElementById("claimForm"),uidInput=document.getElementById("uid"),message=document.getElementById("message"),button=document.getElementById("submitBtn");
-async function loadStatus(){try{const r=await fetch("/api/status"),s=await r.json();document.getElementById("remaining").textContent=s.remaining;document.getElementById("claimed").textContent=`${s.claimed}/${s.totalSlots}`;document.getElementById("reward").textContent=s.reward;if(s.remaining<=0)button.disabled=true;}catch(_){}}
-form.addEventListener("submit",async e=>{e.preventDefault();message.textContent="";button.disabled=true;button.textContent="PLEASE WAIT...";try{const r=await fetch("/api/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({uid:uidInput.value.trim()})}),data=await r.json();message.textContent=data.message||"Something went wrong. Please try again.";message.style.color=data.ok?"#0ecb81":"#f6465d";if(data.ok){uidInput.value="";await loadStatus();}}catch(_){message.textContent="Connection error. Please try again.";message.style.color="#f6465d";}finally{button.textContent="CLAIM REWARD 🎉";button.disabled=false;await loadStatus();}});
-loadStatus();
-</script>
-</body>
-</html>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#332707,#0b0e11 48%,#07090b);color:#eaecef;font-family:Arial,sans-serif;display:grid;place-items:center;padding:20px}.card{width:100%;max-width:480px;background:#181a20;border:1px solid #34383f;border-radius:22px;padding:28px 22px;text-align:center;box-shadow:0 18px 60px #0008}.logo{width:64px;height:64px;margin:0 auto 18px;background:#f0b90b;color:#0b0e11;display:grid;place-items:center;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);font-size:38px;font-weight:bold}h1{font-size:clamp(24px,6vw,34px);line-height:1.12;color:#f0b90b;margin:0 0 12px}.sub{color:#d1d5db}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0}.stat{background:#0b0e11;border:1px solid #30343b;border-radius:12px;padding:12px 4px}.stat strong{display:block;color:#f0b90b;font-size:20px}.stat span{font-size:11px;color:#848e9c}label{display:block;text-align:left;font-size:13px;margin-bottom:8px}input,button{width:100%;border-radius:10px;padding:15px;font-size:16px}input{background:#0b0e11;color:white;border:1px solid #474d57}button{margin-top:12px;border:0;background:#f0b90b;color:#0b0e11;font-weight:bold}#message{min-height:24px;font-size:14px}.notice,.note{font-size:11px;line-height:1.5}.notice{padding:10px;background:#262015;color:#e6d5a4;border-radius:9px}.note{color:#848e9c}</style></head><body><main class="card"><div class="logo">◇</div><h1>CRYPTO WITH ANONYMOUS BINANCE GIVEAWAY</h1><p class="sub">Enter your Binance UID to submit a giveaway claim 🎁</p><section class="stats"><div class="stat"><strong id="reward">$0.05</strong><span>PER SLOT</span></div><div class="stat"><strong id="remaining">8</strong><span>SLOTS LEFT</span></div><div class="stat"><strong id="claimed">0/8</strong><span>CLAIMED</span></div></section><form id="form"><label for="uid">Binance UID</label><input id="uid" inputmode="numeric" maxlength="12" placeholder="Enter your Binance UID" required><button id="btn">CLAIM REWARD 🎉</button></form><p id="message" role="status"></p><div class="notice">Independent giveaway concept; not affiliated with Binance. Never enter your password, 2FA code, seed phrase, or private key.</div><p class="note">This demo checks UID format only. It cannot verify UID existence or retrieve usernames without an authorized verification method.</p></main><script>
+const form=document.querySelector("#form"),uid=document.querySelector("#uid"),msg=document.querySelector("#message"),btn=document.querySelector("#btn");
+async function status(){try{const s=await(await fetch("/api/status")).json();document.querySelector("#remaining").textContent=s.remaining;document.querySelector("#claimed").textContent=s.claimed+"/"+s.totalSlots;document.querySelector("#reward").textContent=s.reward;}catch(e){}}
+form.addEventListener("submit",async e=>{e.preventDefault();btn.disabled=true;msg.textContent="Please wait...";try{const r=await fetch("/api/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({uid:uid.value.trim()})}),d=await r.json();msg.textContent=d.message;msg.style.color=d.ok?"#0ecb81":"#f6465d";if(d.ok)uid.value="";}catch(e){msg.textContent="Connection error. Try again.";msg.style.color="#f6465d";}btn.disabled=false;await status();});status();
+</script></body></html>
